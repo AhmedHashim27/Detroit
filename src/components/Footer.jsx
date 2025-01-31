@@ -4,7 +4,6 @@ const socialLinks = [
   { href: "https://discord.com", icon: <FaDiscord /> },
   { href: "https://twitter.com", icon: <FaTwitter /> },
   { href: "https://youtube.com", icon: <FaYoutube /> },
-  { href: "https://medium.com", icon: <FaMedium /> },
 ];
 
 const Footer = () => {
@@ -33,7 +32,7 @@ const Footer = () => {
           href="#privacy-policy"
           className="text-center text-sm font-light hover:underline md:text-right"
         >
-          Privacy Policy
+          Privacy Policy 
         </a>
       </div>
     </footer>

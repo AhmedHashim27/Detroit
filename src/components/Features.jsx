@@ -38,7 +38,7 @@ export const BentoTilt = ({ children, className = "" }) => {
   );
 };
 
-export const BentoCard = ({ src, title, description, isComingSoon }) => {
+export const BentoCard = ({ src, title, description, isComingSoon, link }) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [hoverOpacity, setHoverOpacity] = useState(0);
   const hoverButtonRef = useRef(null);
@@ -74,13 +74,18 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
         </div>
 
         {isComingSoon && (
-          <div
+          <a
+            href={link} // Use the `link` property here
+            target="_blank"
+            rel="noopener noreferrer"
             ref={hoverButtonRef}
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white/20"
-          >
+
+
+            className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-[#faff70] px-5 py-2 text-xs uppercase text-black shadow-none transition duration-300 hover:shadow-[0_0_15px_#faff70]"
+            >
             {/* Radial gradient hover effect */}
             <div
               className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
@@ -90,25 +95,27 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
               }}
             />
             <TiLocationArrow className="relative z-20" />
-            <p className="relative z-20">coming soon</p>
-          </div>
+            <p className="relative z-20">Discover</p>
+          </a>
         )}
       </div>
     </div>
   );
 };
 
+
 const Features = () => (
   <section className="bg-black pb-52">
     <div className="container mx-auto px-3 md:px-10">
       <div className="px-5 py-32">
         <p className="font-circular-web text-lg text-blue-50">
-          Into the Metagame Layer
+          Detroit’s Vision: Expectations vs. Reality
         </p>
         <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-          Immerse yourself in a rich and ever-expanding universe where a vibrant
-          array of products converge into an interconnected overlay experience
-          on your world.
+        Just seven years ago, Detroit: Become Human envisioned a future where AI would challenge society's norms, 
+        ethics, and relationships. In less than a decade, many of its predictions have become reality. 
+        From AI's integration into our daily lives to debates over autonomy and morality, explore how fiction has 
+        transformed into our present
         </p>
       </div>
 
@@ -117,11 +124,12 @@ const Features = () => (
           src="videos/feature-1.mp4"
           title={
             <>
-              radia<b>n</b>t
+              <b>R</b>e<b>a</b>lit<b>y</b>
             </>
           }
-          description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
+          description="Explore how Detroit: Become Human’s predictions about AI’s role in daily life have turned into reality, from smart assistants to automated systems shaping our world"
           isComingSoon
+          link="https://www.dmcgroup.eu/en/blog/trends/the-rise-of-smart-assistants/" 
         />
       </BentoTilt>
 
@@ -131,11 +139,12 @@ const Features = () => (
             src="videos/feature-2.mp4"
             title={
               <>
-                zig<b>m</b>a
+                <b>C</b>r<b>e</b>ati<b>v</b>it<b>y</b>
               </>
             }
-            description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
+            description="Learn how Detroit envisioned AI-driven creativity, from music to art, and how tools like DALL·E and ChatGPT are redefining creative industries"
             isComingSoon
+            link = "https://openai.com/research/dall-e/"
           />
         </BentoTilt>
 
@@ -144,11 +153,12 @@ const Features = () => (
             src="videos/feature-3.mp4"
             title={
               <>
-                n<b>e</b>xus
+              <b>E</b>thi<b>c</b>s
               </>
             }
-            description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
+            description="Delve into the ethical dilemmas raised by Detroit: Become Human and the ongoing debates about AI rights, biases, and moral responsibilities in today’s world"
             isComingSoon
+            link = "https://www.captechu.edu/blog/ethical-considerations-of-artificial-intelligence"
           />
         </BentoTilt>
 
@@ -157,31 +167,41 @@ const Features = () => (
             src="videos/feature-4.mp4"
             title={
               <>
-                az<b>u</b>l
+                Dis<b>P</b>l<b>a</b>ceme<b>n</b>t
               </>
             }
-            description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
+            description="Uncover the parallels between the game’s portrayal of androids replacing jobs and the real-world impact of AI-driven automation on industries and workers"
             isComingSoon
+            link = "https://www.nature.com/articles/s41599-024-02647-9"
           />
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_2">
-          <div className="flex size-full flex-col justify-between bg-violet-300 p-5">
-            <h1 className="bento-title special-font max-w-64 text-black">
-              M<b>o</b>re co<b>m</b>ing s<b>o</b>on.
-            </h1>
-
-            <TiLocationArrow className="m-5 scale-[5] self-end" />
-          </div>
+          <BentoCard
+            src="videos/feature-6.mp4"
+            title={
+              <>
+                <b>E</b>m<b>o</b>tio<b>n</b>
+              </>
+            }
+            description="Discover how Detroit explored emotional intelligence in AI, and how modern systems are creating deeper human connections through empathy-driven technology"
+            isComingSoon
+            link = "https://www.bbc.com/news/technology-61784011"
+          />
         </BentoTilt>
 
+
         <BentoTilt className="bento-tilt_2">
-          <video
+          <BentoCard
             src="videos/feature-5.mp4"
-            loop
-            muted
-            autoPlay
-            className="size-full object-cover object-center"
+            title={
+              <>
+              <b>P</b><b>o</b>li<b>c</b>in<b>g</b>
+              </>
+            }
+            description="See how the game’s portrayal of AI in law enforcement mirrors today’s use of predictive policing, surveillance technologies, and their ethical implications"
+            isComingSoon
+            link = "https://www.chathamhouse.org/2019/08/promise-and-perils-facial-recognition-technology"
           />
         </BentoTilt>
       </div>

@@ -141,7 +141,7 @@ const Hero = () => {
         </div>
 
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-          G<b>A</b>MING
+          R<b>E</b>ALITY
         </h1>
 
         <div className="absolute left-0 top-0 z-40 size-full">
@@ -150,22 +150,27 @@ const Hero = () => {
               redefi<b>n</b>e
             </h1>
 
-            <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
-              Enter the Metagame Layer <br /> Unleash the Play Economy
+            <p className="mb-5 max-w-128 font-robert-regular text-blue-100">
+            Explore the Line Between Fiction and Reality <br /> The Rise of AI in Our World
             </p>
 
             <Button
-              id="watch-trailer"
-              title="Watch trailer"
-              leftIcon={<TiLocationArrow />}
-              containerClass="bg-yellow-300 flex-center gap-1"
-            />
+            id="LEARN_MORE"
+            title="LEARN MORE"
+            leftIcon={<TiLocationArrow />}
+            containerClass="bg-yellow-300 flex-center gap-1"
+            href="https://www.verdict.co.uk/detroit-become-human-is-more-than-just-a-game/"
+          />
+
+
+
+
           </div>
         </div>
       </div>
 
       <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-        G<b>A</b>MING
+      R<b>E</b>ALITY
       </h1>
     </div>
   );
